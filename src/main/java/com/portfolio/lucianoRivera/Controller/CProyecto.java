@@ -48,10 +48,10 @@ public class CProyecto {
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoProy){
         
         if(StringUtils.isBlank(dtoProy.getNombreProy()))
-            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(StringUtils.isBlank(dtoProy.getDescripcionProy()))
-            return new ResponseEntity(new Mensaje("El campo descripcion es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         
         if(sProy.existsByNombreProy(dtoProy.getNombreProy()))
             return new ResponseEntity(new Mensaje("Ese proyecto ya existe"), HttpStatus.BAD_REQUEST);
@@ -82,7 +82,7 @@ public class CProyecto {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(StringUtils.isBlank(dtoProy.getDescripcionProy()))
-            return new ResponseEntity(new Mensaje("El campo descripcion es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         
         Proyecto proyecto = sProy.getOne(id).get();
         proyecto.setNombreProy(dtoProy.getNombreProy());

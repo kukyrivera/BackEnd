@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-//@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RestController
 @RequestMapping("/educacion")
 public class CEducacion {
@@ -58,11 +57,11 @@ public class CEducacion {
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
         if(StringUtils.isBlank(dtoeducacion.getNombreEd())){
-            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
         if(StringUtils.isBlank(dtoeducacion.getDescripcionEd())){
-            return new ResponseEntity(new Mensaje("El campo descripcion es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         
         if(sEducacion.existsByNombreEd(dtoeducacion.getNombreEd())){
@@ -95,11 +94,11 @@ public class CEducacion {
         }
         
         if(StringUtils.isBlank(dtoeducacion.getNombreEd())){
-            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
         if(StringUtils.isBlank(dtoeducacion.getDescripcionEd())){
-            return new ResponseEntity(new Mensaje("El campo descripcion es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         
         Educacion educacion = sEducacion.getOne(id).get();

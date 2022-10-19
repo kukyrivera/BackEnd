@@ -48,10 +48,10 @@ public class CHabilidad {
     public ResponseEntity<?> create(@RequestBody dtoHabilidad dtohab){
         
         if(StringUtils.isBlank(dtohab.getNombreHab()))
-            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(dtohab.getPorcentajeHab() <= 0 )
-            return new ResponseEntity(new Mensaje("El campo porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(shab.existsByNombreHab(dtohab.getNombreHab()))
             return new ResponseEntity(new Mensaje("Esa habilidad ya existe"), HttpStatus.BAD_REQUEST);
@@ -75,7 +75,7 @@ public class CHabilidad {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(dtohab.getPorcentajeHab() <= 0)
-            return new ResponseEntity(new Mensaje("El campo porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
         
         Habilidad habilidad = shab.getOne(id).get();
         habilidad.setNombreHab(dtohab.getNombreHab());
