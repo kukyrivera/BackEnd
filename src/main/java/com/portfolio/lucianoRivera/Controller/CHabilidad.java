@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = {"http://localhost:4200", "https://frontendlr-dd15c.web.app"}, allowedHeaders = "*")
+@CrossOrigin(origins = {"http://localhost:4200", "https://portfolio-lr.web.app"}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/habilidad")
 public class CHabilidad {
