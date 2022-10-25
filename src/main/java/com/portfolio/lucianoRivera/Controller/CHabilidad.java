@@ -50,7 +50,7 @@ public class CHabilidad {
         if(StringUtils.isBlank(dtohab.getNombreHab()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         
-        if(dtohab.getPorcentajeHab() <= 0 )
+        if(dtohab.getPorcentajeHab() <= 0 || dtohab.getPorcentajeHab() > 100 )
             return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
         
         if(shab.existsByNombreHab(dtohab.getNombreHab()))
