@@ -12,7 +12,7 @@ public class dtoProyecto {
 
     public dtoProyecto() {
     }
-    
+
     public dtoProyecto(String nombreProy, String descripcionProy) {
         this.nombreProy = nombreProy;
         this.descripcionProy = descripcionProy;
