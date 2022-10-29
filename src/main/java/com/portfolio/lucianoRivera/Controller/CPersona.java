@@ -66,9 +66,6 @@ public class CPersona {
         if(StringUtils.isBlank(dtopersona.getDescripcion()))
             return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         
-        if(StringUtils.isBlank(dtopersona.getImg()))
-            return new ResponseEntity(new Mensaje("La imagen es obligatoria"), HttpStatus.BAD_REQUEST);
-        
         Persona persona = sPersona.getOne(id).get();
         persona.setNombre(dtopersona.getNombre());
         persona.setApellido(dtopersona.getApellido());
