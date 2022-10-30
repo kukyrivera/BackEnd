@@ -63,8 +63,7 @@ public class CPersona {
         if(StringUtils.isBlank(dtopersona.getApellido()))
             return new ResponseEntity(new Mensaje("El apellido es obligatorio"), HttpStatus.BAD_REQUEST);
         
-        if(StringUtils.isBlank(dtopersona.getDescripcion()))
-            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
+        
         
         Persona persona = sPersona.getOne(id).get();
         persona.setNombre(dtopersona.getNombre());
